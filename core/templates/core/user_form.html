@@ -1,0 +1,41 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col">
+        <h1>User Form</h1>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 style="text-align: center;">Provide User Information</h1>
+        <br>
+        </div>
+    </div>
+    <form action="" method="post" enctype="multipart/form-data">
+
+        {% csrf_token %}
+        {% for item in form %}
+        <div class="row">
+            <div class="col">
+                {{item.label}}
+                {{item}}
+            </div>
+        </div>
+            {% endfor %}
+            <br>
+
+            <div class=" row">
+                <div class="col">
+                    <div class="btn-group gap-2 col-12 ">
+                        <button type="submit" class="btn btn-primary">Confirm</button>
+                        <button type="button" class="btn btn-secondary"> <a href="{% url 'home' %}" style="text-decoration: none; color: white;">Cancel</a></button>
+                    </div>
+                </div>
+            </div>
+    </form>
+</div>
+{% endblock content %}

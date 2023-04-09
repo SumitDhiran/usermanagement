@@ -1,0 +1,50 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+    <h1>Login User</h1>
+<div class="container">
+
+    <div class="row">
+        <div class="col">
+            <h1>Log In</h1>
+            <p>Please Enter Correct Username and Password to Login.</p>
+            <hr>
+        </div>
+    </div>
+<br>
+    <div class="row">
+        <div class="col">
+            <form action="" method="post">
+                {% csrf_token %}
+                <label for="email" class="form-label"><b>Email</b></label>
+                <input type="email" class="form-control" placeholder="Enter email" name="email" id='' required>
+        </div>
+    </div>
+<br>
+    <div class="row">
+        <div class="col">
+                <label for="password" class="form-label" ><b>Password</b></label>
+                <input type="password" class="form-control" placeholder="*****" name="password" id="" required>
+        </div>
+    </div>
+<br>
+    <div class="row">
+        <div class="col">
+            <div class="btn-group gap-2 col-12 ">
+                <button type="submit" class="btn btn-primary">Log in</button>
+                <button type="button" class="btn btn-secondary"><a href="{% url 'home' %}" style="text-decoration: none; color: white;">Cancel</a></button>
+            </div>
+        </div>
+    </div>
+<br>
+    <div class="row">
+        <div class="col">
+            <p>Don't Have an Account? Sign Up Here <a href="{% url 'register' %}" style="color:dodgerblue">Sign Up</a>.</p>
+        </div>
+    </div>
+
+
+    </form>
+</div>
+{% endblock content %}

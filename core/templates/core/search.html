@@ -1,0 +1,13 @@
+{% for item in users %}
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.phone }}</td>
+        <td>{{ item.description }}</td>
+        <td><img src="{{ item.get_profile_image_url }}" alt="profile-image" width="50" height="50"></td>
+        {% if request.user.is_authenticated  and request.user.is_staff%}
+        <td><a href="{% url 'update_user' item.id %}"><img src="{% static 'images/icon/edit.svg' %}" alt=""></a></td>
+        <td><a href="{% url 'delete_user' item.id %}"><img src="{% static 'images/icon/x-circle.svg' %}" alt=""></a></td>
+        {% endif %}
+    </tr>
+{% endfor %}

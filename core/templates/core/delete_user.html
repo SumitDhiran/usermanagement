@@ -1,0 +1,45 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<br>
+<div class="row" style="padding: 2em;">
+    <div class="col-12" style="margin: 1em;" >
+        <h1 style="color: rgb(46, 158, 192);">Delete User</h1>
+        <br>
+        <h2>Are You Sure You want to Delete <span style="color: rgb(46, 158, 192);">{{user}} ?</span></h2>
+    </div>
+</div>
+<!--<br>-->
+<div class="row" style="padding: 2em;">
+    <div class="col-6" style="margin: 1em 0em 20em;">
+        <form action="" method="post">
+            {% csrf_token %}
+
+            <div class="btn-group gap-2 col-12 ">
+                <button type="submit" class="btn btn-primary">Confirm</button>
+                <a href="{% url 'home' %}" style="text-decoration: none; color: white;"><button type="button" class="btn btn-secondary"> Cancel</a></button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+
+
+<!--<div class=container>
+    <div class="row">
+        <div class="col">
+            <h2>Are You Sure You want to Delete <span style="color: rgb(46, 158, 192);">{{candidate} </span></h2>
+            <form action="" method="post">
+                {% csrf_token %}
+
+                <div class="btn-group gap-2 col-12 ">
+                    <button type="submit" class="btn btn-primary">Confirm</button>
+                    <button type="button" class="btn btn-secondary"> <a href="{% url 'candidates' }" style="text-decoration: none; color: white;">Cancel</a></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>-->
